@@ -14,10 +14,18 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String name = scanner.next().trim();
         System.out.println("Good day to you " +name);
+        tryAskingForNumber();
+    }
+    public static void tryAskingForNumber(){
         System.out.print("Please provide a whole number: ");
         Scanner scanner2 = new Scanner(System.in);
-        int number = scanner2.nextInt();
-        int powerOf = number*number;
-        System.out.println("The power of " + number + " = " + powerOf );
+        if(scanner2.hasNextInt()){
+            int number = scanner2.nextInt();
+            int powerOf = number*number;
+            System.out.println("The power of " + number + " = " + powerOf );
+        }else{
+            System.out.println("That does not look like a whole number to me, let's try again...");
+            tryAskingForNumber();
+        }
     }
 }
