@@ -1,25 +1,27 @@
 package JavaCakes.CardGenerator;
 
 import JavaCakes.ClassLib.Card;
-import JavaCakes.ClassLib.CardCollection;
-import JavaCakes.ClassLib.Deck;
-import JavaCakes.ClassLib.Rules;
+
+import java.util.Random;
 
 public class CardCreator {
-    public Deck CreateDeck(){
-        Deck deck = new Deck();
-        for(int i = 0; i < Rules.maxDeckSize; i++){
-            Card thisCard = CreateCard();
-            deck.cards.add(thisCard);
-        }
-        return deck;
-    }
-    public Card CreateCard(){
+    public Card CreateCard(int maxCombinedHealth, int maxCombinedAttack, int maxCombinedCost, int currentDeckSize) {
         Card thisCard = new Card();
-        thisCard.cost = 2;
-        thisCard.maxAttack = 1;
-        thisCard.maxHealth = 2;
+
+        thisCard.maxAttack = getStatValue(maxCombinedAttack, currentDeckSize);
+        thisCard.cost = getStatValue(maxCombinedCost, currentDeckSize);
+        thisCard.maxHealth = getStatValue(maxCombinedHealth, currentDeckSize);
         thisCard.name = "test";
         return thisCard;
+    }
+    public int getStatValue(int maxCombinedStat, int currentDeckSize){
+        Random randomNumber = new Random();
+        int minValue = 1;
+        int difference = maxCombinedStat - currentDeckSize;
+        int maxValue = 5;
+        if (difference < 5) {
+            maxValue = difference;
+        }
+         return randomNumber.nextInt((maxValue - minValue) + 1) + minValue;
     }
 }
