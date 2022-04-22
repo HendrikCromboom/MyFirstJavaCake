@@ -1,6 +1,8 @@
 # MyFirstJavaCake
 -----------------
 
+## Purpose
+-----------------
 
 The purpose of this project is to learn java on my previous experience as a c# developer.
 
