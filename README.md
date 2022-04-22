@@ -3,7 +3,7 @@
 
 ## Purpose
 
-The purpose of this project is to learn java on my previous experience as a c# developer.
+The purpose of this project is to learn java based on my previous experience as a c# developer.
 
 
 ## Goal
