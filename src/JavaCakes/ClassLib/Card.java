@@ -1,4 +1,4 @@
-package JavaCakes;
+package JavaCakes.ClassLib;
 
 public class Card {
     public int health;
